@@ -3,13 +3,19 @@
 help:
 	@echo "-------------------------------HELP-------------------------------"
 	@echo
+	@echo "- make app: Starts with Dash App."
 	@echo "- make docs: Open the browser and load the documentation."
 	@echo "- make interrogate: To check documentation coverage type."
 	@echo "- make linters: To check the code formatting."
 	@echo "- make pre-commit: Performs compliance checking of commits."
+	@echo "- make run: Run Application"
 	@echo "- make test: To test the project type."
 	@echo
 	@echo "------------------------------------------------------------------"
+
+.PHONY: app
+app:
+	python -m pylegends.dash.app
 
 .PHONY: docs
 docs:
@@ -29,6 +35,10 @@ linters:
 .PHONY: pre-commit
 pre-commit:
 	pre-commit run --all-files
+
+.PHONY: run
+run:
+	python -m jobs.job_riot
 
 .PHONY: test
 test:
