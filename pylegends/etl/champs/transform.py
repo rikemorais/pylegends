@@ -66,7 +66,7 @@ class TransformChamps:
             self.dataframe = pd.read_csv(file_path)
             return True
         except FileNotFoundError:
-            print(f"Arquivo não encontrado: {file_path}")
+            print(f"File not found: {file_path}")
             return False
 
     def drop_columns(self, columns: List[str]) -> bool:

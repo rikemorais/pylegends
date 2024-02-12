@@ -16,6 +16,7 @@ pyspark = "^3.5.0"
 dash = "^2.15.0"
 dash-table = "^5.0.0"
 pandas = "^2.2.0"
+pyarrow = "^15.0.0"
 
 
 [tool.poetry.group.test.dependencies]

@@ -9,6 +9,7 @@ class Riot:
         PUUID (str): Player identifier (PUUID).
     """
 
+    LANG: str = "en_US"
     URL_CHAMPS: str = "https://br1.api.riotgames.com/lol/champion-mastery/v4/" "champion-masteries/by-puuid/"
     PUUID: str = "Hj9Nd07B27U2qvJV0VnHira-oC1uliJPeQIzbdR_a1pYJ13_Bon_4ekX4-GNDrIZLXDACvzBvWjVpg"
 

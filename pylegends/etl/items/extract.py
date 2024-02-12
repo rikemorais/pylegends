@@ -6,7 +6,7 @@ import pandas as pd
 import requests
 
 from pylegends.common.version import get_latest_version
-from pylegends.utils.config import LocalPathItems
+from pylegends.utils.config import LocalPathItems, Riot
 
 
 class ExtractItems:
@@ -18,8 +18,9 @@ class ExtractItems:
 
     def __init__(self):
         """Initializes the class with the desired version of the item data."""
-        self.base_url = "https://ddragon.leagueoflegends.com/cdn/{}/data/pt_BR/item.json"
+        self.base_url = "https://ddragon.leagueoflegends.com/cdn/{}/data/{}/item.json"
         self.version = get_latest_version()
+        self.lang = Riot.LANG
 
     def run(self) -> None:
         """Performs the process of extracting data from items."""
@@ -39,7 +40,7 @@ class ExtractItems:
             Dict: A dictionary with the champions' data, or an empty dictionary if there is a failure.
         """
         if self.version:
-            final_url = self.base_url.format(self.version)
+            final_url = self.base_url.format(self.version, self.lang)
             response = requests.get(final_url)
             data = response.json()
             return data["data"]

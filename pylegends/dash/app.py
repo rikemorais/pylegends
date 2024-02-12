@@ -72,8 +72,11 @@ class Dashboard:
         """Configures callbacks for the Dash application."""
         self.app.callback(Output("data-table", "data"), Input("interval-component", "n_intervals"))(self.update_data)
 
-    def update_data(self) -> List[Dict[str, Any]]:
+    def update_data(self, n_intervals: int) -> List[Dict[str, Any]]:
         """Updates table data every defined time interval.
+
+        Args:
+            n_intervals (int): The number of times the interval has been triggered.
 
         Returns:
             List[Dict[str, Any]]: List of dictionaries representing the updated rows of the table.

@@ -5,7 +5,7 @@ import pandas as pd
 import requests
 
 from pylegends.common.version import get_latest_version
-from pylegends.utils.config import LocalPathChamps
+from pylegends.utils.config import LocalPathChamps, Riot
 
 
 class ExtractChamps:
@@ -23,8 +23,9 @@ class ExtractChamps:
         """
         Initializes the ExtractChamps Class, setting the base URL and getting the latest version of the game.
         """
-        self.base_url = "https://ddragon.leagueoflegends.com/cdn/{}/data/pt_BR/champion.json"
+        self.base_url = "https://ddragon.leagueoflegends.com/cdn/{}/data/{}/champion.json"
         self.version = get_latest_version()
+        self.lang = Riot.LANG
 
     def run(self) -> None:
         """
@@ -48,7 +49,7 @@ class ExtractChamps:
             Dict: A dictionary with the champions' data, or an empty dictionary if there is a failure.
         """
         if self.version:
-            final_url = self.base_url.format(self.version)
+            final_url = self.base_url.format(self.version, self.lang)
             response = requests.get(final_url)
             data = response.json()
             return data["data"]
