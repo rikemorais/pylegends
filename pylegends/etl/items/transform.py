@@ -4,12 +4,13 @@ from typing import Dict, Optional
 
 import pandas as pd
 import requests
-from pylegends.utils.config import LocalPathItens
+
+from pylegends.utils.config import LocalPathItems
 
 
-class ExtractItems:
+class TransformItems:
     """
-    Class responsible for extracting information from Riot API items.
+    Class responsible for transform information from Riot API items.
 
     This class makes requests to the game's API to obtain the latest item data and saves it in a JSON file.
     """
@@ -72,7 +73,7 @@ class ExtractItems:
         return versions[0] if versions else None
 
     @staticmethod
-    def save_to_csv(df: pd.DataFrame, filepath: str = LocalPathItens.RAW) -> None:
+    def save_to_csv(df: pd.DataFrame, filepath: str = LocalPathItems.RAW) -> None:
         """
         Saves the DataFrame to a CSV file.
 

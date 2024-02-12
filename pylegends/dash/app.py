@@ -3,6 +3,7 @@ from typing import Any, Dict, List
 import dash
 import pandas as pd
 from dash import Input, Output, dash_table, dcc, html
+
 from pylegends.utils.config import LocalPathMastery
 
 
@@ -69,8 +70,7 @@ class Dashboard:
 
     def setup_callbacks(self) -> None:
         """Configures callbacks for the Dash application."""
-        self.app.callback(Output("data-table", "data"),
-                          Input("interval-component", "n_intervals"))(self.update_data)
+        self.app.callback(Output("data-table", "data"), Input("interval-component", "n_intervals"))(self.update_data)
 
     def update_data(self) -> List[Dict[str, Any]]:
         """Updates table data every defined time interval.

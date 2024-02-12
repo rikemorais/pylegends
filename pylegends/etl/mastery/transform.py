@@ -1,6 +1,7 @@
 from typing import Optional, Tuple
 
 import pandas as pd
+
 from pylegends.utils.config import LocalPathMastery
 
 
