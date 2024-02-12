@@ -6,7 +6,7 @@ import pandas as pd
 import requests
 
 from pylegends.common.version import get_latest_version
-from pylegends.utils.config import LocalPathItens
+from pylegends.utils.config import LocalPathItems
 
 
 class ExtractItems:
@@ -61,7 +61,7 @@ class ExtractItems:
             raise Exception(f"⛔ Error when fetching item data: {response.status_code}")
 
     @staticmethod
-    def save_to_csv(df: pd.DataFrame, filepath: str = LocalPathItens.RAW) -> None:
+    def save_to_csv(df: pd.DataFrame, filepath: str = LocalPathItems.RAW) -> None:
         """
         Saves the DataFrame to a CSV file.
 

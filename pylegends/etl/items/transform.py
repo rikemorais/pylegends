@@ -26,7 +26,6 @@ class TransformItems:
         if data:
             df = pd.DataFrame.from_dict(data, orient="index")
             self.save_to_csv(df)
-            print("✅ Item Data Saved Successfully!")
         else:
             print("⛔ Failed to Get Item Data!!!")
 
