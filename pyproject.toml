@@ -1,0 +1,90 @@
+[tool.poetry]
+name = "pylegends"
+version = "0.1.0"
+description = "Project designed to collect data from the League of Legends Game API."
+authors = ["Henrique Morais <rikeaju@hotmail.com>"]
+license = "GPL-3.0 license"
+readme = "README.md"
+packages = [{include = "pylegends"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+pyspark = "^3.5.0"
+dash = "^2.15.0"
+dash-table = "^5.0.0"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
+pre-commit = "^3.6.1"
+faker = "^23.1.0"
+
+
+[tool.poetry.group.docs.dependencies]
+diagrams = "^0.23.4"
+mkdocs = "^1.5.3"
+mkdocstrings = "^0.24.0"
+mkdocstrings-python = "^1.8.0"
+mkdocs-glightbox = "^0.3.7"
+
+
+[tool.poetry.group.lint.dependencies]
+black = "^24.1.1"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+interrogate = "^1.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+exclude = '''
+/(
+	\.git
+| \.hg
+| \.mypy_cache
+| \.tox
+| \.venv
+| _build
+| buck-out
+| build
+)/
+'''
+
+[tool.isort]
+profile = 'black'
+multi_line_output = 3
+include_trailing_comma = true
+skip_glob = ["docs/*", "bitbucket/*", ".git/*"]
+line_length = 120
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+[tool.interrogate]
+ignore-init-method = false
+ignore-init-module = true
+ignore-magic = false
+ignore-semiprivate = false
+ignore-private = false
+ignore-property-decorators = true
+ignore-module = true
+ignore-nested-functions = false
+ignore-nested-classes = true
+ignore-setters = false
+exclude = ["setup.py", "docs", "build", "bitbucket", "tests", "*exceptions.py"]
+ignore-regex = ["^get$", "^mock_.*", ".*BaseClass.*"]
+verbose = 0
+quiet = false
+whitelist-regex = []
+color = true
+omit-covered-files = false
+generate-badge = "docs/assets/"
+badge-format = "svg"

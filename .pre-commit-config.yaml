@@ -1,0 +1,130 @@
+exclude: "docs/|poetry.lock"
+fail_fast: true
+default_language_version:
+  python: python3
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+        name: Remove os Espaços em Branco à Direita
+
+      - id: end-of-file-fixer
+        name: Garante Última Linha em Branco
+
+      - id: check-json
+        name: Valida a Sintaxe dos Arquivos JSON
+
+      - id: check-toml
+        name: Valida a Sintaxe dos Arquivos TOML
+
+      - id: check-yaml
+        name: Valida a Sintaxe dos Arquivos YAML
+
+      - id: check-docstring-first
+        name: Verifica Posição das Docstrings
+
+      - id: check-added-large-files
+        name: Impede Commit de Arquivos Muito Grandes
+
+      - id: debug-statements
+        name: Verifica as Importações
+
+      - id: requirements-txt-fixer
+        name: Ordena as Entradas do Arquivo Requirements
+
+      - id: check-ast
+        name: Executa o Check-Ast em Notebooks Jupyter
+
+      - id: check-byte-order-marker
+        name: Proíbe Arquivos com Marcador UTF-8
+
+      - id: check-case-conflict
+        name: Verifica Conflito Case Sensitive
+
+      - id: check-executables-have-shebangs
+        name: Garante Executáveis com um Shebang
+
+      - id: check-merge-conflict
+        name: Checa Conflito de Mesclagem de Strings
+
+      - id: check-symlinks
+        name: Verifica Links Simbólicos Vazios
+
+      - id: detect-private-key
+        name: Detecta Chaves Privadas Expostas
+
+      - id: mixed-line-ending
+        name: Verifica Final de Linha Mista
+
+      - id: no-commit-to-branch
+        name: Bloqueia Commits nas Branches Configuradas
+        args: [--branch, main]
+
+      - id: sort-simple-yaml
+        name: Ordena Conteúdo dos Arquivos YAML
+
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+      - id: python-check-blanket-noqa
+        name: Verifica Uso Excessivo do NOQA
+
+      - id: python-check-mock-methods
+        name: Valida Uso de Mocks
+
+      - id: python-no-eval
+        name: Impede Uso da Função Eval no Código Python
+
+      - id: python-no-log-warn
+        name: Verifica Chamadas dos Métodos de LOG
+
+      - id: python-use-type-annotations
+        name: Verifica Uso de Type Hints
+
+      - id: text-unicode-replacement-char
+        name: Verifica Uso de Caracteres Unicode
+
+  - repo: https://github.com/asottile/yesqa
+    rev: v1.4.0
+    hooks:
+      - id: yesqa
+        name: Verifica Resumidamente a Qualidade do Código
+
+  - repo: https://github.com/asottile/blacken-docs
+    rev: 1.13.0
+    hooks:
+      - id: blacken-docs
+        name: Executa a Formatação do Black em Documentações
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        name: Verifica Secrets Expostas no Código
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        name: Flake8
+
+  - repo: https://gitlab.com/smop/pre-commit-hooks
+    rev: v1.0.0
+    hooks:
+      - id: check-poetry
+        name: Verifica a Consistência das Dependências no Poetry
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: iSort
+        args: ["--profile", "black", --line-length=120]
+
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        name: Black
+        args: [--line-length=120]
