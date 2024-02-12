@@ -1,6 +1,6 @@
 import os
-from typing import Dict, Optional
-
+from typing import Dict
+from pylegends.common.version import get_latest_version
 import pandas as pd
 import requests
 
@@ -23,7 +23,7 @@ class ExtractChamps:
         Initializes the ExtractChamps Class, setting the base URL and getting the latest version of the game.
         """
         self.base_url = "https://ddragon.leagueoflegends.com/cdn/{}/data/pt_BR/champion.json"
-        self.version = self.get_latest_version()
+        self.version = get_latest_version()
 
     def run(self) -> None:
         """
@@ -38,19 +38,6 @@ class ExtractChamps:
             print("✅ Champion Data Saved Successfully!")
         else:
             print("⛔ Failed to Get Champion Data!!!")
-
-    @staticmethod
-    def get_latest_version() -> Optional[str]:
-        """
-        Gets the latest version of the game from the API.
-
-        Returns:
-            Optional[str]: The latest version of the game, or None if the request fails.
-        """
-        versions_url = "https://ddragon.leagueoflegends.com/api/versions.json"
-        response = requests.get(versions_url)
-        versions = response.json()
-        return versions[0] if versions else None
 
     def fetch_data(self) -> Dict:
         """
