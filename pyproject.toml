@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pylegends"
-version = "0.1.0"
+version = "1.0.0"
 description = "Project designed to collect data from the League of Legends Game API."
 authors = ["Henrique Morais <rikeaju@hotmail.com>"]
 license = "GPL-3.0 license"
@@ -15,6 +15,7 @@ python = "^3.10"
 pyspark = "^3.5.0"
 dash = "^2.15.0"
 dash-table = "^5.0.0"
+pandas = "^2.2.0"
 
 
 [tool.poetry.group.test.dependencies]
