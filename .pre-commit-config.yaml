@@ -7,101 +7,101 @@ repos:
     rev: v4.4.0
     hooks:
       - id: trailing-whitespace
-        name: Remove os Espaços em Branco à Direita
+        name: Remove Trailing Whitespace
 
       - id: end-of-file-fixer
-        name: Garante Última Linha em Branco
+        name: Ensure End of File
 
       - id: check-json
-        name: Valida a Sintaxe dos Arquivos JSON
+        name: Validate JSON Syntax
 
       - id: check-toml
-        name: Valida a Sintaxe dos Arquivos TOML
+        name: Validate TOML Syntax
 
       - id: check-yaml
-        name: Valida a Sintaxe dos Arquivos YAML
+        name: Validate YAML Syntax
 
       - id: check-docstring-first
-        name: Verifica Posição das Docstrings
+        name: Check Docstring Position
 
       - id: check-added-large-files
-        name: Impede Commit de Arquivos Muito Grandes
+        name: Prevent Commit of Large Files
 
       - id: debug-statements
-        name: Verifica as Importações
+        name: Check Debug Statements
 
       - id: requirements-txt-fixer
-        name: Ordena as Entradas do Arquivo Requirements
+        name: Sort Requirements File Entries
 
       - id: check-ast
-        name: Executa o Check-Ast em Notebooks Jupyter
+        name: Run Check-Ast on Jupyter Notebooks
 
       - id: check-byte-order-marker
-        name: Proíbe Arquivos com Marcador UTF-8
+        name: Prohibit Files with UTF-8 BOM
 
       - id: check-case-conflict
-        name: Verifica Conflito Case Sensitive
+        name: Check Case Conflict
 
       - id: check-executables-have-shebangs
-        name: Garante Executáveis com um Shebang
+        name: Ensure Executables Have a Shebang
 
       - id: check-merge-conflict
-        name: Checa Conflito de Mesclagem de Strings
+        name: Check String Merge Conflicts
 
       - id: check-symlinks
-        name: Verifica Links Simbólicos Vazios
+        name: Check Empty Symbolic Links
 
       - id: detect-private-key
-        name: Detecta Chaves Privadas Expostas
+        name: Detect Exposed Private Keys
 
       - id: mixed-line-ending
-        name: Verifica Final de Linha Mista
+        name: Check Mixed Line Endings
 
       - id: no-commit-to-branch
-        name: Bloqueia Commits nas Branches Configuradas
+        name: Block Commits to Configured Branches
         args: [--branch, main]
 
       - id: sort-simple-yaml
-        name: Ordena Conteúdo dos Arquivos YAML
+        name: Sort YAML File Contents
 
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
     hooks:
       - id: python-check-blanket-noqa
-        name: Verifica Uso Excessivo do NOQA
+        name: Check Excessive NOQA Usage
 
       - id: python-check-mock-methods
-        name: Valida Uso de Mocks
+        name: Validate Mock Usage
 
       - id: python-no-eval
-        name: Impede Uso da Função Eval no Código Python
+        name: Prevent Eval Function Usage in Python Code
 
       - id: python-no-log-warn
-        name: Verifica Chamadas dos Métodos de LOG
+        name: Check LOG Method Calls
 
       - id: python-use-type-annotations
-        name: Verifica Uso de Type Hints
+        name: Check Type Hints Usage
 
       - id: text-unicode-replacement-char
-        name: Verifica Uso de Caracteres Unicode
+        name: Check Unicode Characters Usage
 
   - repo: https://github.com/asottile/yesqa
     rev: v1.4.0
     hooks:
       - id: yesqa
-        name: Verifica Resumidamente a Qualidade do Código
+        name: Check Code Quality Briefly
 
   - repo: https://github.com/asottile/blacken-docs
     rev: 1.13.0
     hooks:
       - id: blacken-docs
-        name: Executa a Formatação do Black em Documentações
+        name: Run Black Formatting on Documentation
 
   - repo: https://github.com/Yelp/detect-secrets
     rev: v1.4.0
     hooks:
       - id: detect-secrets
-        name: Verifica Secrets Expostas no Código
+        name: Check Exposed Secrets in Code
 
   - repo: https://github.com/PyCQA/flake8
     rev: 6.0.0
@@ -113,7 +113,7 @@ repos:
     rev: v1.0.0
     hooks:
       - id: check-poetry
-        name: Verifica a Consistência das Dependências no Poetry
+        name: Check Poetry Dependency Consistency
 
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
