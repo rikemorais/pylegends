@@ -1,9 +1,10 @@
 import os
 from typing import Dict
-from pylegends.common.version import get_latest_version
+
 import pandas as pd
 import requests
 
+from pylegends.common.version import get_latest_version
 from pylegends.utils.config import LocalPathChamps
 
 
