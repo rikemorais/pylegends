@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="build: Initial Project Structure">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <changelist_data name="Henrique Morais" email="rikeaju@hotmail.com" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/docker/compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/docker/dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/kubernetes/kind.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/kubernetes/pod.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pylegends/common/mongodb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pylegends.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pylegends.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iac/terraform/cluster.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/cluster.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iac/terraform/organization.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/organization.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iac/terraform/project.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/project.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iac/terraform/provider.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/provider.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iac/terraform/terraform.tfstate" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/terraform.tfstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iac/terraform/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <list id="c0bb345c-48cf-4517-a53c-3d35bd154f5b" name="Ignore" comment="Ignore" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,11 +68,16 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "dev",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "last_opened_file_path": "/Users/carlos.fontes/Documents/dev/pylegends",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/infrastructure" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -70,7 +90,6 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="" />
       <changelist id="c0bb345c-48cf-4517-a53c-3d35bd154f5b" name="Ignore" comment="" />
-      <changelist id="" name="Ignored Files" comment="" />
       <created>1707695075837</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
