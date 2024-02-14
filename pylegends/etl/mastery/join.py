@@ -28,6 +28,7 @@ class JoinChamps:
         """Performs data joining and column organization processes."""
         self.join_data()
         self.sort_columns()
+        print("✅ Join Mastery and Champion Data Saved Successfully!")
 
     def join_data(self) -> None:
         """Merge mastery data and champion information into a single DataFrame and save it to a CSV file."""

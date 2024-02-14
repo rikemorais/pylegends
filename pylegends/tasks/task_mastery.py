@@ -1,5 +1,6 @@
 from pylegends.etl.mastery.extract import ExtractMastery
 from pylegends.etl.mastery.join import JoinChamps
+from pylegends.etl.mastery.load import LoadMastery
 from pylegends.etl.mastery.transform import TransformMastery
 
 
@@ -26,3 +27,4 @@ class TaskMastery:
         ExtractMastery().run()
         TransformMastery().run()
         JoinChamps().run()
+        LoadMastery().run()

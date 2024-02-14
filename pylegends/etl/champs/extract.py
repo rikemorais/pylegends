@@ -37,7 +37,7 @@ class ExtractChamps:
         if data:
             df = self.to_dataframe(data)
             self.save_to_csv(df)
-            print("✅ Champion Data Saved Successfully!")
+            print("✅ Extract Champion Data Saved Successfully!")
         else:
             print("⛔ Failed to Get Champion Data!!!")
 

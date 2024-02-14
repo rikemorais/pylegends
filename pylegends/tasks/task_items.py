@@ -1,4 +1,5 @@
 from pylegends.etl.items.extract import ExtractItems
+from pylegends.etl.items.load import LoadItems
 from pylegends.etl.items.transform import TransformItems
 
 
@@ -24,3 +25,4 @@ class TaskItems:
         """
         ExtractItems().run()
         TransformItems().run()
+        LoadItems().run()

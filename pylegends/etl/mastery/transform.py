@@ -104,10 +104,19 @@ class TransformMastery:
             print("⛔ Dataframe not loaded!!!")
 
     def save_csv(self, save_path: str) -> bool:
-        """Saves DataFrame to CSV. Returns True if successful, False otherwise."""
+        """
+        Saves the DataFrame to a CSV file.
+
+        Args:
+            save_path (str): Path of the destination CSV file.
+
+        Returns:
+            bool: true if the file is saved successfully, false otherwise.
+        """
         if self.dataframe is not None:
             try:
                 self.dataframe.to_csv(save_path, index=False)
+                print("✅ Transform Mastery Data Saved Successfully!")
                 return True
             except Exception as e:
                 print(f"⛔ Error saving file: {e}")

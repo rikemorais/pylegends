@@ -6,21 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="build: Initial Project Structure">
       <changelist_data name="Henrique Morais" email="rikeaju@hotmail.com" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/docker/compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/docker/dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/kubernetes/kind.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/kubernetes/pod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pylegends/common/mongodb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pylegends/etl/champs/load.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pylegends/etl/items/load.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pylegends/etl/mastery/load.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/pylegends.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pylegends.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iac/terraform/cluster.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/cluster.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iac/terraform/organization.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/organization.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iac/terraform/project.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/project.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iac/terraform/provider.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/provider.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iac/terraform/terraform.tfstate" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/terraform.tfstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iac/terraform/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/terraform/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobs/job_riot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/job_riot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylegends/common/mongodb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/common/mongodb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylegends/etl/champs/extract.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/champs/extract.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylegends/etl/champs/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/champs/transform.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylegends/etl/items/extract.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/items/extract.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylegends/etl/items/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/items/transform.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylegends/etl/mastery/extract.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/mastery/extract.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylegends/etl/mastery/join.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/mastery/join.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylegends/etl/mastery/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/mastery/transform.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylegends/tasks/task_champs.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/tasks/task_champs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylegends/tasks/task_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/tasks/task_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylegends/tasks/task_mastery.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/tasks/task_mastery.py" afterDir="false" />
     </list>
     <list id="c0bb345c-48cf-4517-a53c-3d35bd154f5b" name="Ignore" comment="Ignore" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,17 +68,51 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python.load.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "dev",
-    "last_opened_file_path": "/Users/carlos.fontes/Documents/dev/pylegends",
+    "last_opened_file_path": "/Users/rikemorais/PycharmProjects/pylegends/pylegends/etl/mastery",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pylegends/etl/mastery" />
+      <recent name="$PROJECT_DIR$/pylegends/etl/items" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/infrastructure" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="load" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pylegends" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pylegends/etl/champs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pylegends/etl/champs/load.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.load" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

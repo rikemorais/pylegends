@@ -43,10 +43,20 @@ class ETLRiot:
         elapsed_time = end_time - start_time
         hours, remainder = divmod(elapsed_time, 3600)
         minutes, seconds = divmod(remainder, 60)
-        print(
-            f"✅ Success! Total Execution Time of ETL JOB: \
-🕒 {int(hours)} hours {int(minutes)} minutes {int(seconds)} seconds"
-        )
+
+        time_parts = []
+        if hours:
+            hour_str = "hour" if hours == 1 else "hours"
+            time_parts.append(f"{int(hours)} {hour_str}")
+        if minutes:
+            minute_str = "minute" if minutes == 1 else "minutes"
+            time_parts.append(f"{int(minutes)} {minute_str}")
+        if seconds or not time_parts:  # Always show seconds if no hours or minutes
+            second_str = "second" if seconds == 1 else "seconds"
+            time_parts.append(f"{int(seconds)} {second_str}")
+
+        time_str = " ".join(time_parts)
+        print(f"✅ Success! Total Execution Time of ETL JOB: 🕒 {time_str}")
 
     @staticmethod
     def _log_failure(error: Exception) -> None:

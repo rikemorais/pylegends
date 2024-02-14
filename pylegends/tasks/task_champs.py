@@ -1,4 +1,5 @@
 from pylegends.etl.champs.extract import ExtractChamps
+from pylegends.etl.champs.load import LoadChamps
 from pylegends.etl.champs.transform import TransformChamps
 
 
@@ -24,3 +25,4 @@ class TaskChamps:
         """
         ExtractChamps().run()
         TransformChamps().run()
+        LoadChamps().run()
