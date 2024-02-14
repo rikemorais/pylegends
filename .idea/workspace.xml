@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="feat: Write Data to MongoDB">
-      <change beforePath="$PROJECT_DIR$/pylegends/common/mongodb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/common/mongodb.py" afterDir="false" />
-    </list>
+    <list default="true" id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="feat: Upper" />
     <list id="c0bb345c-48cf-4517-a53c-3d35bd154f5b" name="Ignore" comment="Ignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707877662415</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: Upper">
+      <option name="closed" value="true" />
+      <created>1707879761105</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707879761105</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -140,6 +146,7 @@
     <MESSAGE value="Ignore" />
     <MESSAGE value="build: Initial Project Structure" />
     <MESSAGE value="feat: Write Data to MongoDB" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Write Data to MongoDB" />
+    <MESSAGE value="feat: Upper" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Upper" />
   </component>
 </project>

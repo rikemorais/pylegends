@@ -19,5 +19,5 @@ class LoadMastery:
         loader.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     LoadMastery().run()

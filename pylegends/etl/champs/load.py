@@ -19,5 +19,5 @@ class LoadChamps:
         loader.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     LoadChamps().run()

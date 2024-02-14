@@ -19,5 +19,5 @@ class LoadItems:
         loader.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     LoadItems().run()
