@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="build: Initial Project Structure">
-      <changelist_data name="Henrique Morais" email="rikeaju@hotmail.com" />
-      <change afterPath="$PROJECT_DIR$/pylegends/etl/champs/load.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pylegends/etl/items/load.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pylegends/etl/mastery/load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pylegends.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pylegends.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobs/job_riot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/job_riot.py" afterDir="false" />
+    <list default="true" id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="feat: Write Data to MongoDB">
       <change beforePath="$PROJECT_DIR$/pylegends/common/mongodb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/common/mongodb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylegends/etl/champs/extract.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/champs/extract.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylegends/etl/champs/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/champs/transform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylegends/etl/items/extract.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/items/extract.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylegends/etl/items/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/items/transform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylegends/etl/mastery/extract.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/mastery/extract.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylegends/etl/mastery/join.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/mastery/join.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylegends/etl/mastery/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/etl/mastery/transform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylegends/tasks/task_champs.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/tasks/task_champs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylegends/tasks/task_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/tasks/task_items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylegends/tasks/task_mastery.py" beforeDir="false" afterPath="$PROJECT_DIR$/pylegends/tasks/task_mastery.py" afterDir="false" />
     </list>
     <list id="c0bb345c-48cf-4517-a53c-3d35bd154f5b" name="Ignore" comment="Ignore" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707704449813</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: Write Data to MongoDB">
+      <option name="closed" value="true" />
+      <created>1707877662415</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707877662415</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -148,6 +139,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ignore" />
     <MESSAGE value="build: Initial Project Structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="build: Initial Project Structure" />
+    <MESSAGE value="feat: Write Data to MongoDB" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Write Data to MongoDB" />
   </component>
 </project>

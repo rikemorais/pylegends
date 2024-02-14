@@ -53,4 +53,4 @@ class MongoDBConnector:
             key = {unique_key_name: record[unique_key_name]}
             self.write_data(db_name, collection_name, record, key)
 
-        print(f"✅ Data Successfully Loaded into the Collection {collection_name}!")
+        print(f"✅ Data Successfully Loaded into the Collection {collection_name.upper()}!")
