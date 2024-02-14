@@ -1,0 +1,24 @@
+FROM python:3.10.12
+
+# Copia todo o projeto para o diretório de trabalho no container
+COPY . /app
+
+# Define o diretório de trabalho
+WORKDIR /app
+
+# Instala o Poetry
+RUN curl -sSL https://install.python-poetry.org | python3 - && \
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc
+
+# Atualiza o PATH para incluir o binário do Poetry
+ENV PATH="/root/.local/bin:$PATH"
+
+# Configura o Poetry para não criar ambientes virtuais e instala as dependências do projeto
+RUN poetry config virtualenvs.create false && \
+    poetry install --no-dev
+
+# Compila o projeto usando o Poetry (opcional, dependendo de suas necessidades)
+# RUN poetry build
+
+# Comando para rodar a aplicação
+CMD ["python", "-m", "pylegends.dash.app"]

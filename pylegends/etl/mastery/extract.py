@@ -36,7 +36,7 @@ class ExtractMastery:
 
             dataframe = self.response_to_dataframe(response)
             self.save_dataframe_to_csv(dataframe)
-            print("✅ Mastery Data Saved Successfully!")
+            print("✅ Extract Mastery Data Saved Successfully!")
         except Exception as err:
             raise Exception(f"⛔ Error During RiotGamesAPI Execution: {err}") from err
 

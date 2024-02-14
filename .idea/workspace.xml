@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="build: Initial Project Structure">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="feat: Upper" />
     <list id="c0bb345c-48cf-4517-a53c-3d35bd154f5b" name="Ignore" comment="Ignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,13 +49,52 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python.load.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "dev",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "last_opened_file_path": "/Users/rikemorais/PycharmProjects/pylegends/pylegends/etl/mastery",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pylegends/etl/mastery" />
+      <recent name="$PROJECT_DIR$/pylegends/etl/items" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/infrastructure" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="load" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pylegends" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pylegends/etl/champs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pylegends/etl/champs/load.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.load" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -70,7 +107,6 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="" />
       <changelist id="c0bb345c-48cf-4517-a53c-3d35bd154f5b" name="Ignore" comment="" />
-      <changelist id="" name="Ignored Files" comment="" />
       <created>1707695075837</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -84,7 +120,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707704449813</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: Write Data to MongoDB">
+      <option name="closed" value="true" />
+      <created>1707877662415</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707877662415</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: Upper">
+      <option name="closed" value="true" />
+      <created>1707879761105</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707879761105</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -93,6 +145,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ignore" />
     <MESSAGE value="build: Initial Project Structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="build: Initial Project Structure" />
+    <MESSAGE value="feat: Write Data to MongoDB" />
+    <MESSAGE value="feat: Upper" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Upper" />
   </component>
 </project>
