@@ -1,0 +1,19 @@
+ARG AIRFLOW_DOCKER_IMAGE=jupyter/datascience-notebook:latest
+
+FROM ${AIRFLOW_DOCKER_IMAGE}
+
+USER root
+
+ENV JUPYTER_HOME=/opt/jupyter
+
+RUN mkdir -p ${JUPYTER_HOME}
+
+WORKDIR ${JUPYTER_HOME}
+
+RUN pip install jupyter findspark
+
+EXPOSE 8888
+
+ENTRYPOINT []
+
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--NotebookApp.token=''", "--NotebookApp.password=''"]
