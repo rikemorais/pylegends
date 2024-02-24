@@ -1,0 +1,34 @@
+# Ignore Everything
+**
+
+# But Not These Files
+!config/
+!dags/
+!plugins/
+!spark/
+!tests/
+!entrypoint.sh
+!requirements.txt
+!requirements-dev.txt
+
+# Exclude Python Compiled Files and Typical Directories
+*.py[cod]
+__pycache__/
+*.pyc
+
+# Exclude Other Unnecessary Files
+*.git
+*.gitignore
+.dockerignore
+Dockerfile
+README.md
+*.md
+*.log
+*.csv
+*.json
+.env
+.venv
+venv/
+*.egg-info/
+dist/
+build/
