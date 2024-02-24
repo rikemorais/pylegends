@@ -1,45 +1,40 @@
-.DEFAULT_GOAL = help
+default: build
 
 help:
 	@echo "-------------------------------HELP-------------------------------"
 	@echo
-	@echo "- make app: Starts with Dash App."
-	@echo "- make docs: Open the browser and load the documentation."
-	@echo "- make interrogate: To check documentation coverage type."
-	@echo "- make linters: To check the code formatting."
-	@echo "- make pre-commit: Performs compliance checking of commits."
-	@echo "- make run: Run Application"
-	@echo "- make test: To test the project type."
+	@echo "- make build: Creates the local environment."
+	@echo "- make run: Builds (if necessary) and starts the services defined in the Docker Compose file."
+	@echo "- make check-services: Checks if the necessary Docker services are running."
+	@echo "- make bootstrap: Performs the bootstrap process."
+	@echo "- make jupyter: Builds and runs the Jupyter notebook container."
+	@echo "- make linter: To check the code formatting."
 	@echo
 	@echo "------------------------------------------------------------------"
 
-.PHONY: app
-app:
-	python -m pylegends.dash.app
+build:
+	@docker compose build
 
-.PHONY: docs
-docs:
-	open http://127.0.0.1:8000/
-	mkdocs serve
+run: build
+	@docker compose up
 
-.PHONY: interrogate
-interrogate:
-	interrogate -v ./
+check-services:
+	@echo "Checking if services are running..."
+	@docker compose ps | grep 'Up' > /dev/null 2>&1 || (echo "Error: Services are not running. Please start services using 'make run'." && exit 1)
+	@echo "Services are running."
 
-.PHONY: linters
-linters:
-	isort .
+bootstrap: check-services
+	@echo "Running the bootstrap process..."
+	@docker compose exec airflow python3 tests/fixtures/bootstrap_files.py
+
+jupyter: check-services
+	@docker build --build-arg="AIRFLOW_DOCKER_IMAGE=rikemorais/pylegends:latest" -t jupyter-notebook:latest -f dockerfile-jupyter .
+	@echo "Starting Jupyter notebook..."
+	@docker run --rm -p 8888:8888 --network=$(shell basename "$(PWD)")_default -v ./dags:/opt/airflow/dags -v ./plugins:/opt/airflow/plugins -v ./spark:/opt/airflow/spark -v ./tests:/opt/airflow/tests -v ./tmp/jupyter:/opt/jupyter -v ./config/spark-defaults-dev.conf:/opt/spark/conf/spark-defaults.conf --env AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow pcg-jupyter-notebook:latest
+
+# Define Phony Targets
+.PHONY: linter
+linter:
 	black .
-	poetry run python -m flake8 ./ --extend-exclude=dist,build --show-source --statistics
-
-.PHONY: pre-commit
-pre-commit:
-	pre-commit run --all-files
-
-.PHONY: run
-run:
-	python -m jobs.job_riot
-
-.PHONY: test
-test:
-	poetry run pytest -vv
+	isort .
+	flake8 .
