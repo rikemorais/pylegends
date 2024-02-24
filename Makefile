@@ -28,9 +28,9 @@ bootstrap: check-services
 	@docker compose exec airflow python3 tests/fixtures/bootstrap_files.py
 
 jupyter: check-services
-	@docker build --build-arg="AIRFLOW_DOCKER_IMAGE=rikemorais/pylegends:latest" -t jupyter-notebook:latest -f dockerfile-jupyter .
+	@docker build --build-arg="AIRFLOW_DOCKER_IMAGE=rikemorais/pylegends:latest" -t jupyter-notebook:latest -f Dockerfile-Jupyter .
 	@echo "Starting Jupyter notebook..."
-	@docker run --rm -p 8888:8888 --network=$(shell basename "$(PWD)")_default -v ./dags:/opt/airflow/dags -v ./plugins:/opt/airflow/plugins -v ./spark:/opt/airflow/spark -v ./tests:/opt/airflow/tests -v ./tmp/jupyter:/opt/jupyter -v ./config/spark-defaults-dev.conf:/opt/spark/conf/spark-defaults.conf --env AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow pcg-jupyter-notebook:latest
+	@docker run --rm -p 8888:8888 --network=$(shell basename "$(PWD)")_default -v ./dags:/opt/airflow/dags -v ./plugins:/opt/airflow/plugins -v ./spark:/opt/airflow/spark -v ./tests:/opt/airflow/tests -v ./tmp/jupyter:/opt/jupyter -v ./config/spark-defaults-dev.conf:/opt/spark/conf/spark-defaults.conf --env AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow jupyter-notebook:latest
 
 # Define Phony Targets
 .PHONY: linter
