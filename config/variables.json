@@ -1,0 +1,5 @@
+{
+    "spark_max_num_executors": 1,
+    "spark_max_cores": 1,
+    "spark_max_memory": "1G"
+}

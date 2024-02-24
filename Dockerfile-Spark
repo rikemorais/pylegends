@@ -1,0 +1,45 @@
+FROM spark:3.5.0-scala2.12-java17-ubuntu
+
+USER root
+
+ENV PYTHONUNBUFFERED=1
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHON_VERSION=3.8.15
+
+RUN set -ex & \
+    apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libffi-dev \
+    libssl-dev \
+    libbz2-dev \
+    zlib1g-dev \
+    liblzma-dev \
+    libsqlite3-dev \
+    libreadline-dev \
+    libncurses5-dev \
+    libtcl8.6 \
+    libtk8.6 \
+    libgdbm-dev \
+    uuid-dev
+
+RUN wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tgz && \
+    tar -xzf Python-${PYTHON_VERSION}.tgz && \
+    cd Python-${PYTHON_VERSION} && \
+    ./configure --enable-optimizations && \
+    make -j$(nproc) && \
+    make altinstall && \
+    cd .. && \
+    rm -rf Python-${PYTHON_VERSION}.tgz Python-${PYTHON_VERSION} && \
+    wget https://bootstrap.pypa.io/get-pip.py && \
+    python3.8 get-pip.py && \
+    rm get-pip.py
+
+RUN ln -s /usr/local/bin/python3.8 /usr/local/bin/python3
+
+# --- Hadoop AWS Installation --
+RUN wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar -P $SPARK_HOME/jars && \
+    wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar -P $SPARK_HOME/jars
+
+COPY config/spark-defaults.conf /opt/spark/conf/spark-defaults.conf
+
+USER spark

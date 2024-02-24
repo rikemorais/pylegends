@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="feat: Upper" />
+    <list default="true" id="caf4cac5-015e-4079-9769-17be16fdf06a" name="Changes" comment="build: Remove Old Files">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile-Jupyter" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile-Spark" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+    </list>
     <list id="c0bb345c-48cf-4517-a53c-3d35bd154f5b" name="Ignore" comment="Ignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +27,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/dev" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="Henrique Morais &lt;rikeaju@hotmail.com&gt;" />
@@ -46,23 +66,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Python.load.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "/Users/rikemorais/PycharmProjects/pylegends/pylegends/etl/mastery",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Python.load.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rikemorais/PycharmProjects/pylegends/pylegends/etl/mastery&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pylegends/etl/mastery" />
       <recent name="$PROJECT_DIR$/pylegends/etl/items" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu\home\rikemorais\dev\pylegends" />
+      <recent name="\\wsl.localhost\Ubuntu\home\rikemorais\dev\pylegends\infrastructure\docker" />
+      <recent name="\\wsl.localhost\Ubuntu\home\rikemorais\dev\pylegends\infrastructure\dockerfiles" />
+      <recent name="\\wsl.localhost\Ubuntu\home\rikemorais\dev\pylegends\infrastructure" />
       <recent name="$PROJECT_DIR$/infrastructure" />
     </key>
   </component>
@@ -136,8 +161,108 @@
       <option name="project" value="LOCAL" />
       <updated>1707879761105</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: CODEOWNERS File">
+      <option name="closed" value="true" />
+      <created>1708810150771</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708810150771</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: Connections Setup File">
+      <option name="closed" value="true" />
+      <created>1708810494837</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708810494837</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: Spark Defaults Configurations">
+      <option name="closed" value="true" />
+      <created>1708810805681</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708810805681</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: Variables">
+      <option name="closed" value="true" />
+      <created>1708810907875</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708810907875</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: Webserver">
+      <option name="closed" value="true" />
+      <created>1708811293497</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708811293497</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: Spark Tasks">
+      <option name="closed" value="true" />
+      <created>1708811494887</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708811494887</updated>
+    </task>
+    <task id="LOCAL-00010" summary="build: Init File">
+      <option name="closed" value="true" />
+      <created>1708811548379</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708811548379</updated>
+    </task>
+    <task id="LOCAL-00011" summary="build: Docker Ignore">
+      <option name="closed" value="true" />
+      <created>1708811576850</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708811576850</updated>
+    </task>
+    <task id="LOCAL-00012" summary="build: Project Requirements">
+      <option name="closed" value="true" />
+      <created>1708811630852</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708811630852</updated>
+    </task>
+    <task id="LOCAL-00013" summary="build: Makefile">
+      <option name="closed" value="true" />
+      <created>1708811758829</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708811758829</updated>
+    </task>
+    <task id="LOCAL-00014" summary="build: Entrypoint">
+      <option name="closed" value="true" />
+      <created>1708812335222</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708812335222</updated>
+    </task>
+    <task id="LOCAL-00015" summary="build: Remove Old Files">
+      <option name="closed" value="true" />
+      <created>1708812369191</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1708812369191</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="Makefile" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
     <option name="UPDATE_COPYRIGHT" value="true" />
@@ -147,6 +272,18 @@
     <MESSAGE value="build: Initial Project Structure" />
     <MESSAGE value="feat: Write Data to MongoDB" />
     <MESSAGE value="feat: Upper" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Upper" />
+    <MESSAGE value="feat: CODEOWNERS File" />
+    <MESSAGE value="feat: Connections Setup File" />
+    <MESSAGE value="feat: Spark Defaults Configurations" />
+    <MESSAGE value="feat: Variables" />
+    <MESSAGE value="feat: Webserver" />
+    <MESSAGE value="feat: Spark Tasks" />
+    <MESSAGE value="build: Init File" />
+    <MESSAGE value="build: Docker Ignore" />
+    <MESSAGE value="build: Project Requirements" />
+    <MESSAGE value="build: Makefile" />
+    <MESSAGE value="build: Entrypoint" />
+    <MESSAGE value="build: Remove Old Files" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: Remove Old Files" />
   </component>
 </project>

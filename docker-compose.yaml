@@ -1,0 +1,147 @@
+  version: '3.7'
+
+  services:
+    localstack:
+      image: localstack/localstack:0.14.5
+      ports:
+        - "4572:4572"
+        - "4566:4566"
+        - "8081:8081"
+      environment:
+        - SERVICES=s3
+        - PORT_WEB_UI=8081
+        - DOCKER_HOST=unix:///var/run/docker.sock
+        - HOST_TMP_FOLDER=/tmp/localstack
+        - DATA_DIR=/tmp/localstack/data
+      volumes:
+        - localstack-tmp:/tmp/localstack
+        - /var/run/docker.sock:/var/run/docker.sock
+      deploy:
+        resources:
+          limits:
+            cpus: "1.0"
+            memory: 1G
+
+    postgres:
+      image: postgres:latest
+      environment:
+        - POSTGRES_USER=airflow
+        - POSTGRES_PASSWORD=airflow
+        - POSTGRES_DB=airflow
+      volumes:
+        - postgres_db_volume:/var/lib/postgresql/data
+      deploy:
+        resources:
+          limits:
+            cpus: "1.0"
+            memory: 1G
+
+    airflow:
+      build:
+        context: .
+        args:
+          SPARK_DOCKER_IMAGE: rikemorais/spark
+          REQUIREMENTS_FILE: requirements-dev.txt
+      image: rikemorais/pylegends:latest
+      command: bash -c "airflow scheduler & airflow webserver -p 8080"
+      depends_on:
+        - postgres
+        - spark-master
+      environment:
+        - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+        - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+        - AIRFLOW__CORE__LOAD_EXAMPLES=False
+        - AIRFLOW__CORE__PARALLELISM=1
+        - AIRFLOW__CORE__MAX_ACTIVE_TASKS_PER_DAG=1
+        - AIRFLOW__SCHEDULER__MAX_TIS_PER_QUERY=1
+        - AIRFLOW__WEBSERVER__EXPOSE_CONFIG=True
+        - AIRFLOW__SCHEDULER__DAG_DIR_LIST_INTERVAL=90
+        - AIRFLOW_HOME=/opt/airflow
+        - AIRFLOW_ENV=development
+      volumes:
+        - ./config/webserver_config.py:/opt/airflow/webserver_config.py
+        - ./config/variables.json:/opt/airflow/variables.json
+        - ./config/connections.json:/opt/airflow/connections.json
+        - ./dags:/opt/airflow/dags
+        - ./plugins:/opt/airflow/plugins
+        - ./spark:/opt/airflow/spark
+        - ./tests:/opt/airflow/tests
+        - ./config/spark-defaults-dev.conf:/opt/spark/conf/spark-defaults.conf
+        - airflow_logs_volume:/opt/airflow/logs
+      ports:
+        - "8080:8080"
+
+    spark-master:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      image: rikemorais/spark
+      container_name: spark-master
+      ports:
+        - "8082:8082"
+        - "7077:7077"
+      command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+      environment:
+        - SPARK_MASTER_HOST=spark-master
+        - SPARK_MASTER_PORT=7077
+        - SPARK_MASTER_WEBUI_PORT=8082
+      volumes:
+        - ./spark:/opt/airflow/spark
+        - ./config/spark-defaults-dev.conf:/opt/spark/conf/spark-defaults.conf
+      deploy:
+        resources:
+          limits:
+            cpus: "1.0"
+            memory: 3G
+
+    spark-worker:
+      build:
+        context: .
+        dockerfile: Dockerfile-Spark
+      depends_on:
+        - spark-master
+      ports:
+        - "8083:8083"
+      command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+      environment:
+        - SPARK_WORKER_WEBUI_PORT=8083
+        - SPARK_MASTER=spark://spark-master:7077
+      volumes:
+        - ./spark:/opt/airflow/spark
+        - ./config/spark-defaults-dev.conf:/opt/spark/conf/spark-defaults.conf
+      deploy:
+        resources:
+          limits:
+            cpus: "1.0"
+            memory: 3G
+
+    pylegends-mongodb:
+      image: mongo:4.4.28
+      ports:
+        - "27017:27017"
+      environment:
+        MONGO_INITDB_DATABASE: pylegends
+        MONGO_INITDB_ROOT_USERNAME: admin
+        MONGO_INITDB_ROOT_PASSWORD: admin
+      deploy:
+        resources:
+          limits:
+            cpus: "1.0"
+            memory: 1G
+
+    pylegends-mongo-express:
+      image: mongo-express
+      ports:
+        - "9091:8081"
+      environment:
+        ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+        ME_CONFIG_MONGODB_ADMINPASSWORD: admin
+        ME_CONFIG_MONGODB_URL: mongodb://admin:admin@pylegends-mongodb:27017/?authSource=admin
+        ME_CONFIG_BASICAUTH_USERNAME: admin
+        ME_CONFIG_BASICAUTH_PASSWORD: admin
+
+  volumes:
+    postgres_db_volume:
+    airflow_logs_volume:
+    localstack-data:
+    localstack-tmp:

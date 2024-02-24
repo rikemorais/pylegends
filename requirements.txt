@@ -1,0 +1,6 @@
+apache-airflow[postgres,kubernetes,amazon,mongo,apache-spark]==2.7.2
+apache-airflow-providers-amazon==8.7.1
+apache-airflow-providers-apache-spark==4.1.5
+apache-airflow-providers-mongo==3.2.2
+pyarrow==11.0.0
+pyspark==3.5.0

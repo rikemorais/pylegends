@@ -1,0 +1,25 @@
+{
+    "spark_default": {
+        "conn_type": "spark",
+        "host": "spark://spark-master",
+        "port": 7077,
+        "extra_dejson": {
+          "deploy-mode": "client",
+          "container_image": "rikemorais/spark:latest",
+          "application_bucket": "pylegends"
+        }
+    },
+    "aws_default": {
+        "conn_type": "aws",
+        "extra_dejson": {"aws_access_key_id": "test","aws_secret_access_key": "test","host": "http://localstack:4566"}
+    },
+    "pylegends_mongo": {
+        "conn_type": "mongo",
+        "host": "pylegends-mongodb",
+        "login": "admin",
+        "password": "admin",
+        "schema": "pylegends",
+        "port": 27017,
+        "extra_dejson": {"authSource": "admin"}
+    }
+}
