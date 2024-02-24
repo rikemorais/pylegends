@@ -1,0 +1,14 @@
+-r requirements.txt
+
+black
+diagrams
+faker
+interrogate
+isort
+mkdocs-material
+mkdocs-glightbox
+mkdocstrings
+mkdocstrings-python
+pre-commit
+pytest
+pytest-cov
